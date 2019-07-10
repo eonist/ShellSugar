@@ -1,0 +1,2 @@
+# ShellSugar
+Sugar for Shell

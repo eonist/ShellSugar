@@ -1,5 +1,5 @@
 import Foundation
 
-enum ShellError: Error {
+public enum ShellError: Error {
    case success, failure
 }

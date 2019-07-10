@@ -6,7 +6,7 @@ extension ShellHelper {/*BETA*/
     * NOTE: ⚠️️ supports piping ⚠️️
     * CAUTION: ⚠️️ use this method for hard coded commands, not for commands that the user can insert data ⚠️️
     */
-   static func unsafeRun(_ input: String, _ cd: String = "") -> String {
+   public static func unsafeRun(_ input: String, _ cd: String = "") -> String {
       let (output, terminationStatus) = ShellHelper.unsafeExc(input, cd)
       //Swift.print("terminationStatus: " + "\(terminationStatus)")
       _ = terminationStatus
@@ -16,7 +16,7 @@ extension ShellHelper {/*BETA*/
     * BETA
     * NOTE: supports piping
     */
-   static func unsafeExc(_ input: String, _ cd: String = "") -> (output: String, exitCode: Int32) {
+   public static func unsafeExc(_ input: String, _ cd: String = "") -> (output: String, exitCode: Int32) {
       let task = Process()
       task.currentDirectoryPath = cd
       task.launchPath = "/bin/sh"/*Setting shell as launchPath enables piping support*/ //--> /bin/bash should also work

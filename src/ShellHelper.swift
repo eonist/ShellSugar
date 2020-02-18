@@ -26,7 +26,7 @@ public class ShellHelper {
     */
    public static func exc(_ input: String, _ cd: String = "") -> (output: String, exitCode: Int32) {
       //        Swift.print("🚪⬅️️exc start. input: " + "\(input) cd: \(cd)")
-      var arguments = input.components(separatedBy: " ")//<--you can also use split here
+      var arguments = input.components(separatedBy: " ") // <--you can also use split here
       //        Swift.print("arguments.count: " + "\(arguments.count)")
       //Fixme: This line bellow was $0.encode().decode() to allow % chars, But if your input is already encoded to support space, then you get double encoded content.
       arguments = arguments.map { $0.removingPercentEncoding! } // Fixme: do compactMap here
